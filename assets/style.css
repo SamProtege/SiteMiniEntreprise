@@ -436,3 +436,7 @@
             /* couleur des barres */
             border-radius: 2px;
         }
+
+        .hoverlettre:hover{
+            color:#f1a84d;
+        }
