@@ -3,7 +3,7 @@ emailjs.init("kyW4EFDYJyEjDzJJs");
         // Initialise Supabase
         const supabaseUrl = 'https://bmnmhmqaghasueqciqth.supabase.co';
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtbm1obXFhZ2hhc3VlcWNpcXRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwNzQ2NDAsImV4cCI6MjA2MzY1MDY0MH0.aa-lqong1Cj2zB1iR2kFlFkne6EsW--13HR1HDBFjPM';
-        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
         // Gestion du formulaire
         document.getElementById("tombola-form").addEventListener("submit", async function (e) {
@@ -14,7 +14,7 @@ emailjs.init("kyW4EFDYJyEjDzJJs");
             const email = emailInput.value.trim();
 
             // Vérifie si l'email existe déjà dans Supabase
-            const { data: existingEmail, error } = await supabase
+            const { data: existingEmail, error } = await supabaseClient
                 .from("emails")
                 .select("email")
                 .eq("email", email)
@@ -33,7 +33,7 @@ emailjs.init("kyW4EFDYJyEjDzJJs");
             }
 
             // Insert l'email dans la base
-            const { data: insertedEmail, error: insertError } = await supabase
+            const { data: insertedEmail, error: insertError } = await supabaseClient
                 .from("emails")
                 .insert([{ email: email }]);
 
