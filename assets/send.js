@@ -14,37 +14,51 @@ document.getElementById("tombola-form").addEventListener("submit", async functio
     const emailInput = form.querySelector("input[name='email']");
     const email = emailInput.value.trim();
 
-    // Vérifie si l'email existe déjà dans la base
-    const { data: existingEmail, error } = await supabase
-        .from("emails")
-        .select("email")
-        .eq("email", email)
-        .single();
+    const submitBtn = form.querySelector("button[type='submit']");
+    submitBtn.disabled = true; // Désactive le bouton pendant traitement
 
-    if (existingEmail) {
-        alert("Tu as déjà participé à la tombola 😄");
-        return;
-    }
+    try {
+        // Vérifie si l'email existe déjà dans la base
+        const { data: existingEmails, error } = await supabase
+            .from("emails")
+            .select("email")
+            .eq("email", email);
 
-    // Si l'email n'existe pas, on l'enregistre
-    const { data: insertedEmail, error: insertError } = await supabase
-        .from("emails")
-        .insert([{ email: email }]);
+        if (error) {
+            console.error("Erreur lors de la vérification Supabase :", error);
+            alert("Une erreur est survenue. Réessaie plus tard.");
+            submitBtn.disabled = false;
+            return;
+        }
 
-    if (insertError) {
-        console.error("Erreur Supabase :", insertError);
+        if (existingEmails.length > 0) {
+            alert("Tu as déjà participé à la tombola 😄");
+            submitBtn.disabled = false;
+            return;
+        }
+
+        // Insère l'email dans la base
+        const { error: insertError } = await supabase
+            .from("emails")
+            .insert([{ email: email }]);
+
+        if (insertError) {
+            console.error("Erreur lors de l'insertion Supabase :", insertError);
+            alert("Une erreur est survenue. Réessaie plus tard.");
+            submitBtn.disabled = false;
+            return;
+        }
+
+        // Envoi du mail avec EmailJS
+        await emailjs.sendForm("service_h9xgm27", "template_in2ynxd", form);
+        alert("Merci ! Ta participation à la tombola est enregistrée 🎉");
+
+        form.reset();
+
+    } catch (err) {
+        console.error("Erreur inattendue :", err);
         alert("Une erreur est survenue. Réessaie plus tard.");
-        return;
+    } finally {
+        submitBtn.disabled = false; // Réactive le bouton
     }
-
-    // Envoi du mail avec EmailJS
-    emailjs.sendForm("service_h9xgm27", "template_in2ynxd", form)
-        .then(function () {
-            alert("Merci ! Ta participation à la tombola est enregistrée 🎉");
-        }, function (error) {
-            console.log("FAILED...", error);
-            alert("Une erreur est survenue lors de l'envoi de l'email.");
-        });
-
-    form.reset();
 });
