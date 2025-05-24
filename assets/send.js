@@ -1,18 +1,19 @@
 // Initialise EmailJS
 emailjs.init("kyW4EFDYJyEjDzJJs");
 
-// Initialise Supabase avec un autre nom de variable pour éviter les erreurs
+// URL et clé Supabase
 const supabaseUrl = 'https://bmnmhmqaghasueqciqth.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtbm1obXFhZ2hhc3VlcWNpcXRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwNzQ2NDAsImV4cCI6MjA2MzY1MDY0MH0.aa-lqong1Cj2zB1iR2kFlFkne6EsW--13HR1HDBFjPM';
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'; // ta clé complète
 
+// Initialise Supabase client (attention au nom de la variable)
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // Gestion du formulaire
 document.getElementById("tombola-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const form = this;
-    const emailInput = form.querySelector("input[name='email']");
+    const emailInput = form.querySelector("input[name='user_email']"); // tu as mis name="user_email" dans le HTML
     const email = emailInput.value.trim();
 
     try {
@@ -24,7 +25,6 @@ document.getElementById("tombola-form").addEventListener("submit", async functio
             .single();
 
         if (error && error.code !== 'PGRST116') {
-            // vraie erreur autre que "no rows found"
             console.error("Erreur Supabase :", error);
             alert("Erreur serveur, réessaie plus tard.");
             return;
@@ -35,7 +35,7 @@ document.getElementById("tombola-form").addEventListener("submit", async functio
             return;
         }
 
-        // Insert l'email dans la base
+        // Insère l'email dans la base
         const { data: insertedEmail, error: insertError } = await supabase
             .from("emails")
             .insert([{ email: email }]);
