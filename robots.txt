@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samprotege.github.io/SiteMiniEntreprise/sitemap.xml
