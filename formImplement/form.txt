@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sam Protège</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="icon" type="image/x-icon" href="logo+ico/favicon.ico">
+</head>
+
+<body>
+
+    <header>
+        <img src="logo+ico/logo.png" class="logo">
+
+        <!-- Le bouton burger pour ouvrir le menu mobile -->
+        <button id="menu-toggle" class="burger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Menu de navigation -->
+        <nav id="mobile-menu">
+            <!-- Bouton pour fermer le menu mobile -->
+            <button id="close-btn" aria-label="Fermer le menu">✕</button>
+
+            <a href="#about">Présentation</a>
+            <a href="#kit">Le Kit</a>
+            <a href="#valeurs">Nos Valeurs</a>
+            <a href="#equipe">L'Équipe</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>🧑‍🚒 Qui sommes-nous ?</h2>
+                <p>
+                    Nous sommes cinq jeunes réunis par une idée simple : <strong>protéger les autres, même en
+                        soirée</strong>.
+                    Inspirés par l’esprit des secours, des pompiers, et animés par une envie de faire bouger les
+                    choses,
+                    nous avons créé <strong>Sam’Protège</strong>.
+                </p>
+                <p>
+                    Notre objectif ? Rendre la sécurité accessible, fun, et <strong>dédramatiser les
+                        galères</strong> qui gâchent souvent les bons moments.
+                </p>
+                <ul>
+                    <li>🎒 <strong>Le Marmou’kit</strong>, notre kit de secours de soirée, c’est bien plus qu’un
+                        simple sac avec des pansements :</li>
+                    <li>➡️ Un manuel de premiers secours rédigé à la main et validé par des professionnels</li>
+                    <li>➡️ Des outils concrets : éthylotests, compresses, sacs vomitoires, gants stériles,
+                        préservatifs…</li>
+                    <li>➡️ Une démarche engagée : prévention, éducation et bienveillance</li>
+                </ul>
+                <p>
+                    Derrière ce projet, il y a <strong>du cœur, des galères, de l’énergie</strong>, des nuits
+                    blanches et surtout une
+                    <strong>envie commune d’agir</strong>.
+                </p>
+                <p>
+                    Parce que quand Timothée tombe dans les escaliers, ou quand un couple oublie les essentiels…<br>
+                    <strong>Il faut quelqu’un. Il faut Sam.</strong>
+                </p>
+            </div>
+        </section>
+
+
+        <section id="kit" class="kit-section">
+            <div class="container">
+                <h2>🎒 Le contenu du Marmou’kit</h2>
+                <p>
+                    Le Marmou’kit, c’est un concentré de prévention, de sécurité et de bienveillance dans une pochette
+                    pratique, colorée, et pensée pour toutes les soirées. Voici ce que vous y trouverez :
+                </p>
+                <ul class="kit-list">
+                    <li class="fade-in">🟡 Couverture de survie</li>
+                    <li class="fade-in">🟡 Gants stériles</li>
+                    <li class="fade-in">🟡 Compresses stériles</li>
+                    <li class="fade-in">🟡 Pansements</li>
+                    <li class="fade-in">🟡 Pince à échardes</li>
+                    <li class="fade-in">🟡 Sac vomitoire</li>
+                    <li class="fade-in">🟡 Préservatifs</li>
+                    <li class="fade-in">🟡 Éthylotest</li>
+                    <li class="fade-in">🟡 Lingettes désinfectantes</li>
+                    <li class="fade-in">🔵 <strong>Manuel de premiers secours</strong> – rédigé à la main et validé par
+                        des
+                        professionnels</li>
+                </ul>
+                <p class="kit-note fade-in">
+                    Chaque élément a été soigneusement choisi pour répondre aux petits comme aux gros imprévus, dans
+                    l’esprit Sam’Protège : <strong>jeune, utile, et engagé</strong>.
+                </p>
+            </div>
+        </section>
+
+
+        <section id="valeurs" class="valeurs-section">
+            <div class="container">
+                <h2>💙 Nos valeurs</h2>
+                <p>
+                    Sam’Protège, c’est bien plus qu’un kit. C’est une mission portée par des jeunes engagés pour changer
+                    les habitudes en soirée, avec bienveillance et humour, mais aussi avec sérieux.
+                </p>
+
+                <div class="valeurs-grid">
+                    <div class="valeur fade-in">
+                        <h3>🎉 Gaieté</h3>
+                        <p>Parce qu’un esprit joyeux et positif permet d’aborder même les sujets sérieux avec le
+                            sourire. Nos produits sont fun, mais pas moins utiles.</p>
+                    </div>
+                    <div class="valeur fade-in">
+                        <h3>🧑‍🎓 Jeunesse</h3>
+                        <p>Nous sommes jeunes, et c’est une force. On connaît les galères des soirées entre potes. C’est
+                            pour ça qu’on a créé un produit pensé par nous, pour vous.</p>
+                    </div>
+                    <div class="valeur fade-in">
+                        <h3>🛡️ Prudence</h3>
+                        <p>On ne gâche pas une soirée pour un bobo ou un oubli. On préfère prévenir que courir aux
+                            urgences. Et grâce à Sam, chacun peut être le héros de la soirée.</p>
+                    </div>
+                    <div class="valeur fade-in">
+                        <h3>📘 Éducation</h3>
+                        <p>Briser les tabous, vulgariser les gestes qui sauvent, oser parler de protection, c’est notre
+                            mission. Le savoir doit être partout, même entre deux verres de soda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="equipe" class="equipe-section">
+            <div class="container">
+                <h2> Notre équipe</h2>
+                <p>
+                    Nous sommes 5 lycéens en classe de seconde, réunis autour d'une mission commune : rendre les soirées
+                    plus sûres, plus responsables, et surtout plus simples à gérer en cas de pépin.
+                </p>
+
+                <div class="equipe-grid">
+                    <div class="membre fade-in">
+                        <h3>Johan</h3>
+                        <p>Ancien Jeune Sapeur-Pompier, il apporte son expertise des premiers secours et un max de bonne
+                            humeur au projet !</p>
+                    </div>
+                    <div class="membre fade-in">
+                        <h3>Max</h3>
+                        <p>Lui aussi Jeunes Sapeurs-Pompiers, il sait ce qu’il faut faire quand la soirée
+                            dérape.</p>
+                    </div>
+                    <div class="membre fade-in">
+                        <h3>Alex</h3>
+                        <p>Autre pilier du kit, Alex met sa rigueur et son expérience pompier au service de
+                            l’efficacité.</p>
+                    </div>
+                    <div class="membre fade-in">
+                        <h3>Maxime</h3>
+                        <p>Fils de pompier, Maxime connaît les bons réflexes et ne manque jamais une idée pour améliorer
+                            le kit.</p>
+                    </div>
+                    <div class="membre fade-in">
+                        <h3>Alexandre</h3>
+                        <p>Lui aussi baigné dans l’univers des secours, Alexandre est un soutien solide pour chaque
+                            étape du projet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container fade-in">
+                <h2>🎁 Participe à notre tirage !</h2>
+                <p>Laisse ton adresse e-mail pour tenter ta chance de gagner un kit Sam’Protège au festival des minis entreprise à Paris !<br>
+                    Les gagnants seront contactés par mail pendant le festival ✉️</p>
+
+                <form id="tombola-form">
+                    <input type="email" name="user_email" placeholder="Ton adresse e-mail" required />
+                    <button type="submit">Je participe !</button>
+                </form>
+            </div>
+        </section>
+        <section class="reseau fade-in">
+            <h2>N'hésitez pas à nous soutenir !</h2>
+            <p>Et soyez à votre tour SAM, <strong class="hoverlettre">S</strong>ans <strong class="hoverlettre">A</strong>ccidents <strong class="hoverlettre">M</strong>ortels !
+            </p>
+            <img src="logo+ico/sam.protege_qr.png" class="insta-link fade-in">
+            <img src="logo+ico/sapeurs_lipopette_qr.png" class="insta-link fade-in">
+        </section>
+
+    </main>
+
+    <footer>
+        <img src="logo+ico/logo-sapeurs-lipopette.png" class="logo--sponso">
+        <img src="logo+ico/marmoutier logo.jpg" class="logo--sponso">
+        &copy; 2025 Sam Protège - Tous droits réservés
+    </footer>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="assets/send.js"></script>
+    <script src="assets/anim.js"></script>
+    <script src="assets/script.js"></script>
+
+
+</body>
+
+</html>
