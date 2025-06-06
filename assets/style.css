@@ -444,3 +444,10 @@
         .sitelink:hover{
             color:#f1a84d;
         }
+
+        .video-pres{
+            display: flex;
+            justify-content: center;
+            width: 100px;
+            height: auto;
+        }
