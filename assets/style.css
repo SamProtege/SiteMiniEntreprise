@@ -51,7 +51,6 @@
 
         nav a {
             margin-left: 1.5rem;
-            margin-left: 10px;
             font-weight: 600;
             color: var(--bleu);
             transition: color 0.3s ease;
@@ -457,7 +456,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #9fe7ff;
+  background: rgba(159, 231, 255, 0.747);
   color: #05a8e0;
   padding: 15px 20px;
   text-align: center;
