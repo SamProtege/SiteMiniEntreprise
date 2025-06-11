@@ -501,6 +501,6 @@
   }
 
   header .logo {
-    width: 150px; /* Réduction de la taille du logo du header sur mobile */
+    width: 100px; /* Réduction de la taille du logo du header sur mobile */
   }
 }
