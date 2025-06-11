@@ -319,6 +319,10 @@
             width: 300px;
             height: auto;
         }
+        .insta-link:hover{
+            width: 310px;
+            height: auto;
+        }
 
         .reseau {
             background-color: #05a8e015;
