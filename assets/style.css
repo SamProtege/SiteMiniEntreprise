@@ -475,16 +475,32 @@
 .cookie-banner button:hover {
   background-color: #08c;
 }
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
 @media (max-width: 600px) {
-  .logo--sponso {
-    height: 50px;
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .sponsors {
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
   }
 
-  footer {
-    font-size: 0.9rem;
+  .logo--sponso {
+    width: 80px;
+  }
+
+  header .logo {
+    width: 150px; /* Réduction de la taille du logo du header sur mobile */
   }
 }
