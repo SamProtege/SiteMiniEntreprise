@@ -475,3 +475,16 @@
 .cookie-banner button:hover {
   background-color: #08c;
 }
+@media (max-width: 600px) {
+  .logo--sponso {
+    height: 50px;
+  }
+
+  .sponsors {
+    gap: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
