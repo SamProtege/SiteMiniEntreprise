@@ -189,14 +189,17 @@
                 </div>
             </div>
         </section>
-                <section id="contact" class="contact-section">
+        </section>
+        <section id="contact" class="contact-section">
             <div class="container fade-in">
-                <h2>🎁 Participe à notre tirage ! - 1.5€</h2>
-                <p>Laisse ton adresse e-mail pour tenter ta chance de gagner un kit Sam’Protège au festival des minis entreprise à Paris !<br>
+                <h2>🎁 Participe à notre tirage ! - 1€</h2>
+                <p>Laisse ton adresse e-mail pour tenter ta chance de gagner un kit Sam’Protège au festival des minis
+                    entreprise à Paris !<br>
                     Les gagnants seront contactés par mail pendant le festival ✉️</p>
 
                 <form id="tombola-form">
-                    <input type="email" name="user_email" placeholder="Ton adresse e-mail" required />
+                    <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+                    <input type="email" name="user_email" placeholder="Entrez votre adresse mail" required />
                     <button type="submit">Je participe !</button>
                 </form>
             </div>
@@ -204,8 +207,8 @@
         <section id="contact" class="reseau fade-in" aria-label="Section de soutien et contacts">
             <h2>N'hésitez pas à nous soutenir !</h2>
             <p>Et soyez à votre tour SAM, <strong class="hoverlettre">S</strong>ans <strong
-                    class="hoverlettre">A</strong>ccidents <strong class="hoverlettre">M</strong>ortels ! cliquez sur
-                les QR codes si dessous</p>
+                    class="hoverlettre">A</strong>ccidents <strong class="hoverlettre">M</strong>ortels ! Cliquez sur
+                les QR codes ci-dessous</p>
             <a href="https://www.instagram.com/sam.protege/" target="_blank" rel="noopener noreferrer"
                 aria-label="Instagram Sam Protège">
                 <img src="logo+ico/sam.protege_qr.png" alt="QR code Instagram Sam Protège" class="insta-link fade-in" />
@@ -219,20 +222,38 @@
             <p>Un problème ?</p>
             <p>Contactez-nous via l'adresse mail : sam.protege37000@gmail.com</p>
         </section>
-
+        <section id="video-presentation" class="video-pres" aria-label="Section sur la video intégrées">
+            <video controls width="300">
+                <source src="logo+ico/0326.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+        </section>
     </main>
 
     <footer>
-        <img src="logo+ico/logo-sapeurs-lipopette.png" alt="Logo Sapeurs Lipopette" class="logo--sponso" />
-        <img src="logo+ico/marmoutier logo.jpg" alt="Logo Marmoutier" class="logo--sponso" />
-        <p>&copy; 2025 Sam Protège - Tous droits réservés</p>
+        <p>Ils nous soutiennent : </p>
+        <a href="https://www.sapeurs-lipopette.com/"><img src="logo+ico/logo-sapeurs-lipopette.png"
+                alt="Logo Sapeurs Lipopette" class="logo--sponso" /></a>
+        <a href="https://marmoutier.com/"><img src="logo+ico/marmoutier logo.jpg" alt="Logo Marmoutier"
+                class="logo--sponso" /></a>
+        <a href="https://www.magasins-u.com/magasin/superu-saintjeandemonts"><img src="logo+ico/Super-U.png"
+                alt="Logo Super-U St-Jean de Mont" class="logo--sponso"></a>
+        <p>&copy; 2025 Sam Protège - Tous droits réservés - <a href="mentions-legale.html">mentions légales</a></p>
     </footer>
-
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Ce site utilise des cookies à des fins de mesure d’audience (Google
+            Analytics).
+            <a href="/confidentialite.html" target="_blank">En savoir plus</a>.
+        </p>
+        <button id="accept-cookies"> Accepter 🍪</button>
+        <button id="decline-cookies">Refuser ❌</button>
+    </div>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="assets/send.js"></script>
     <script src="assets/anim.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="assets/script.js" defer></script>
 
 </body>
 
