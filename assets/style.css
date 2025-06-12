@@ -299,6 +299,11 @@
             outline: none;
         }
 
+        #tombola-form input[type="text"]:focus {
+            border-color: #f1a84d;
+            outline: none;
+        }
+
         #tombola-form button {
             padding: 0.8rem 1.2rem;
             background-color: #05a8e0;
