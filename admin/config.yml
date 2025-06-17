@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: SamProtege/SiteMiniEntreprise
+  branch: master # Ou 'master' si c'est ta branche principale
+
+media_folder: "static/uploads" # Chemin où les images/fichiers seront téléchargés depuis la racine de ton dépôt
+public_folder: "/static/uploads" # Chemin public pour accéder aux images/fichiers dans ton site (commence par /)
+
+collections:
+  - name: "posts" # Nom interne de la collection (en anglais de préférence)
+    label: "Articles" # Nom affiché dans le CMS
+    folder: "_posts" # Dossier où se trouvent tes articles (ex: pour Jekyll)
+    create: true # Permettre la création de nouveaux articles
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Format du nom de fichier des articles
+    fields: # Champs pour chaque article
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Mots-clés (séparés par des virgules)", name: "tags", widget: "string", required: false}
+      - {label: "Corps de l'article", name: "body", widget: "markdown"}
+  
+  - name: "pages" # Autre collection pour des pages statiques (ex: "À propos", "Contact")
+    label: "Pages"
+    folder: "pages" # Dossier où se trouvent tes pages
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Permalien", name: "permalink", widget: "string", hint: "Le chemin de la page dans l'URL"}
+      - {label: "Corps de la page", name: "body", widget: "markdown"}
