@@ -16,5 +16,5 @@ collections:
         name: "index"
         file: "index.html"
         fields:
-          - {label: "Titre principal", name: "title", widget: "string"}
-          - {label: "Contenu", name: "body", widget: "markdown"}
+          - { label: "Titre principal", name: "title", widget: "string" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
