@@ -2,6 +2,7 @@ backend:
   name: github
   repo: SamProtege/SiteMiniEntreprise
   branch: master # Ou 'master' si c'est ta branche principale
+  auth_type: pkce 
 
 media_folder: "static/uploads" # Chemin où les images/fichiers seront téléchargés depuis la racine de ton dépôt
 public_folder: "/static/uploads" # Chemin public pour accéder aux images/fichiers dans ton site (commence par /)
