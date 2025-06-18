@@ -11,7 +11,7 @@ async function loadContent(section, titleId, bodyId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadContent("about", "about-title", "about-body");
+  loadContent("accueil", "about-title", "about-body");
   loadContent("kit", "kit-title", "kit-body");
   loadContent("valeurs", "valeurs-title", "valeurs-body");
   loadContent("equipe", "equipe-title", "equipe-body");
