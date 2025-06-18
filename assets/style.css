@@ -315,7 +315,7 @@ footer {
 .insta-link {
     display: block;
     margin: 20px auto 0;
-    max-width: 300px !important;
+    width: 300px !important;
     height: auto;
     transition: width 0.3s ease;
 }
