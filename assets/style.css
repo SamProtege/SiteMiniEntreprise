@@ -526,3 +526,30 @@
                 /* Réduction de la taille du logo du header sur mobile */
             }
         }
+
+        /* Fix taille QR codes */
+        .contact-qrcodes img,
+        .qr-code {
+            max-width: 150px !important;
+            /* taille max, tu peux ajuster */
+            height: auto !important;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Forcer police + couleur sur tout le contenu dynamique */
+        #about-body,
+        #kit-intro,
+        #kit-list,
+        #kit-note,
+        #valeurs-intro,
+        #valeurs-list,
+        #equipe-intro,
+        #equipe-list,
+        #contact-description,
+        #contact-qrcodes,
+        #contact-problem,
+        #contact-mail {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            color: #333 !important;
+        }
