@@ -1,120 +1,83 @@
-// Utilitaire pour créer un élément HTML
-function createElement(tag, className, textContent) {
-    const el = document.createElement(tag);
-    if (className) el.className = className;
-    if (textContent) el.textContent = textContent;
-    return el;
-}
-
-// Charge une section depuis son fichier JSON et insère son contenu dans un conteneur donné
-async function loadSection(jsonPath, containerId) {
-    try {
-        const response = await fetch(jsonPath);
-        if (!response.ok) throw new Error(`Erreur chargement ${jsonPath}`);
-        
-        const data = await response.json();
-        const container = document.getElementById(containerId);
-        if (!container) return;
-
-        // Nettoyer le contenu avant d'ajouter
-        container.innerHTML = "";
-
-        if (data.title) {
-            const h = createElement("h1", "", data.title);
-            container.appendChild(h);
-        }
-
-        if (data.subtitle) {
-            const h2 = createElement("h2", "", data.subtitle);
-            container.appendChild(h2);
-        }
-
-        if (data.paragraphs) {
-            data.paragraphs.forEach(p => {
-                const para = createElement("p", "", p);
-                container.appendChild(para);
-            });
-        }
-
-        if (data.list && Array.isArray(data.list)) {
-            const ul = createElement("ul");
-            data.list.forEach(item => {
-                const li = createElement("li", "", item);
-                ul.appendChild(li);
-            });
-            container.appendChild(ul);
-        }
-
-        if (data.values && Array.isArray(data.values)) {
-            const grid = createElement("div", "valeurs-grid");
-            data.values.forEach(v => {
-                const art = createElement("article", "valeur fade-in");
-                art.setAttribute("aria-label", `Valeur ${v.titre}`);
-                const h3 = createElement("h3", "", v.titre);
-                const p = createElement("p", "", v.texte);
-                art.appendChild(h3);
-                art.appendChild(p);
-                grid.appendChild(art);
-            });
-            container.appendChild(grid);
-        }
-
-        if (data.team && Array.isArray(data.team)) {
-            const grid = createElement("div", "equipe-grid");
-            data.team.forEach(m => {
-                const art = createElement("article", "membre fade-in");
-                art.setAttribute("aria-label", `Membre ${m.nom}`);
-                const h3 = createElement("h3", "", m.nom);
-                const p = createElement("p", "", m.texte);
-
-                // Image si présente
-                if (m.img) {
-                    const img = document.createElement("img");
-                    img.src = m.img;
-                    img.alt = m.nom;
-                    img.className = "equipe-img";
-                    art.appendChild(img);
-                }
-
-                art.appendChild(h3);
-                art.appendChild(p);
-                grid.appendChild(art);
-            });
-            container.appendChild(grid);
-        }
-
-        if (data.qrcodes && Array.isArray(data.qrcodes)) {
-            const qrcodesDiv = createElement("div", "qrcodes");
-            data.qrcodes.forEach(qr => {
-                const img = document.createElement("img");
-                img.src = qr.src;
-                img.alt = qr.alt || "QR Code";
-                img.className = "qrcode-img";
-                qrcodesDiv.appendChild(img);
-            });
-            container.appendChild(qrcodesDiv);
-        }
-
-        if (data.note) {
-            const note = createElement("p", "note", data.note);
-            container.appendChild(note);
-        }
-
-        if (data.mail) {
-            const mail = createElement("p", "mail", `Contact : ${data.mail}`);
-            container.appendChild(mail);
-        }
-
-    } catch (err) {
-        console.error(`Erreur lors du chargement de ${jsonPath} :`, err);
-    }
-}
-
-// Charger toutes les sections à partir de leurs fichiers JSON au chargement de la page
 document.addEventListener("DOMContentLoaded", () => {
-    loadSection("content/accueil.json", "accueil-content");
-    loadSection("content/kit.json", "kit-content");
-    loadSection("content/valeurs.json", "valeurs-content");
-    loadSection("content/equipe.json", "equipe-content");
-    loadSection("content/contact.json", "contact-content");
+    const sections = [
+        { id: "about", file: "about.json", render: renderAbout },
+        { id: "kit", file: "kit.json", render: renderKit },
+        { id: "valeurs", file: "valeurs.json", render: renderValeurs },
+        { id: "equipe", file: "equipe.json", render: renderEquipe },
+        { id: "contact", file: "contact.json", render: renderContact }
+    ];
+
+    sections.forEach(({ file, render }) => {
+        fetch(`content/${file}`)
+            .then(res => {
+                if (!res.ok) throw new Error(`Erreur de chargement: ${file}`);
+                return res.json();
+            })
+            .then(data => render(data))
+            .catch(err => console.error(err));
+    });
+
+    function renderAbout(data) {
+        document.getElementById("about-title").textContent = data.title;
+        const body = document.getElementById("about-body");
+        body.innerHTML = "";
+        data.paragraphs.forEach(p => body.innerHTML += `<p>${p}</p>`);
+        data.list.forEach(item => body.innerHTML += `<p>${item}</p>`);
+        data.closing_paragraphs.forEach(p => body.innerHTML += `<p>${p}</p>`);
+    }
+
+    function renderKit(data) {
+        document.getElementById("kit-title").textContent = data.title;
+        document.getElementById("kit-intro").textContent = data.intro;
+        const list = document.getElementById("kit-list");
+        list.innerHTML = "";
+        data.items.forEach(item => list.innerHTML += `<li>${item}</li>`);
+        document.getElementById("kit-note").textContent = data.note;
+    }
+
+    function renderValeurs(data) {
+        document.getElementById("valeurs-title").textContent = data.title;
+        document.getElementById("valeurs-intro").textContent = data.intro;
+        const container = document.getElementById("valeurs-list");
+        container.innerHTML = "";
+        data.values.forEach(val => {
+            container.innerHTML += `
+                <div class="valeur">
+                    <h3>${val.title}</h3>
+                    <p>${val.description}</p>
+                </div>`;
+        });
+    }
+
+    function renderEquipe(data) {
+        document.getElementById("equipe-title").textContent = data.title;
+        document.getElementById("equipe-intro").textContent = data.intro;
+        const container = document.getElementById("equipe-list");
+        container.innerHTML = "";
+        data.members.forEach(m => {
+            container.innerHTML += `
+                <div class="membre">
+                    <h3>${m.name}</h3>
+                    <h4>${m.role}</h4>
+                    <p>${m.description}</p>
+                </div>`;
+        });
+    }
+
+    function renderContact(data) {
+        document.getElementById("contact-title").textContent = data.support_title;
+        document.getElementById("contact-description").textContent = data.support_text;
+
+        const qrContainer = document.getElementById("contact-qrcodes");
+        qrContainer.innerHTML = "";
+        data.links.forEach(link => {
+            qrContainer.innerHTML += `
+                <a href="${link.href}" target="_blank" aria-label="${link.aria_label}">
+                    <img src="${link.img}" alt="${link.alt}" />
+                </a>`;
+        });
+
+        document.getElementById("contact-problem").textContent = data.contact_info[0];
+        document.getElementById("contact-mail").textContent = data.contact_info[1];
+    }
 });
