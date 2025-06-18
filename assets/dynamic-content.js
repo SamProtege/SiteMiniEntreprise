@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sections = [
-        { id: "about", file: "about.json", render: renderAbout },
+        { id: "about", file: "accueil.json", render: renderAbout },
         { id: "kit", file: "kit.json", render: renderKit },
         { id: "valeurs", file: "valeurs.json", render: renderValeurs },
         { id: "equipe", file: "equipe.json", render: renderEquipe },
