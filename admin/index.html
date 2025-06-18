@@ -1,17 +1,31 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Admin - Sam'Protège</title>
-  </head>
-  <body>
-    <div id="nc-root"></div>
 
-    <script>
-      window.netlifyIdentity = window.netlifyIdentity || {};
-      window.netlifyIdentity.site_id = "f93decc8-828c-46f7-9e72-1cb1c7523da5";
-    </script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin - Sam'Protège</title>
+</head>
+
+<body>
+  <div id="nc-root"></div>
+
+  <script>
+    window.netlifyIdentity = window.netlifyIdentity || {};
+    window.netlifyIdentity.site_id = "f93decc8-828c-46f7-9e72-1cb1c7523da5";
+  </script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+  <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js"></script>
+</body>
+
 </html>
