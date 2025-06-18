@@ -1,9 +1,7 @@
 backend:
-  name: github
-  repo: SamProtege/SiteMiniEntreprise
+  name: git-gateway
   branch: master
-  auth_type: implicit
-  app_id: "Ov23lib1f0o7ErdCqGzX"  # ton App ID GitHub OAuth (si tu l'as)
+
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
