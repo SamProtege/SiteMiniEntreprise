@@ -120,7 +120,7 @@
                 const data = await res.json();
 
                 switch (sectionName) {
-                    case 'accueil':  // ici accueil au lieu d'about
+                    case 'accueil':  // accueil au lieu d'about
                         document.getElementById('about-title').textContent = data.title || '';
                         document.getElementById('about-body').innerHTML = data.body || '';
                         break;
@@ -147,11 +147,11 @@
 
                         const valeursList = document.getElementById('valeurs-list');
                         valeursList.innerHTML = '';
-                        if (Array.isArray(data.valeurs)) {
-                            data.valeurs.forEach(v => {
+                        if (Array.isArray(data.values)) {  // attention : "values" en anglais dans JSON
+                            data.values.forEach(v => {
                                 const div = document.createElement('div');
                                 div.className = 'valeur-item';
-                                div.innerHTML = `<h3>${v.titre}</h3><p>${v.description}</p>`;
+                                div.innerHTML = `<h3>${v.title}</h3><p>${v.description}</p>`;
                                 valeursList.appendChild(div);
                             });
                         }
@@ -163,11 +163,11 @@
 
                         const equipeList = document.getElementById('equipe-list');
                         equipeList.innerHTML = '';
-                        if (Array.isArray(data.membres)) {
-                            data.membres.forEach(m => {
+                        if (Array.isArray(data.members)) {  // "members" en anglais dans JSON
+                            data.members.forEach(m => {
                                 const div = document.createElement('div');
                                 div.className = 'membre-item';
-                                div.innerHTML = `<h3>${m.nom}</h3><p>${m.role}</p>`;
+                                div.innerHTML = `<h3>${m.name}</h3><p>${m.role}</p>`;
                                 equipeList.appendChild(div);
                             });
                         }
@@ -202,6 +202,7 @@
             }
         }
 
+        // Charge toutes les sections au chargement
         ['accueil', 'kit', 'valeurs', 'equipe', 'contact'].forEach(loadSection);
     </script>
 
