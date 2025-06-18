@@ -1,0 +1,22 @@
+{
+  "title": "💙 Nos valeurs",
+  "intro": "Sam’Protège, c’est bien plus qu’un kit. C’est une mission portée par des jeunes engagés pour changer les habitudes en soirée, avec bienveillance et humour, mais aussi avec sérieux.",
+  "values": [
+    {
+      "title": "🎉 Gaieté",
+      "description": "Parce qu’un esprit joyeux et positif permet d’aborder même les sujets sérieux avec le sourire. Nos produits sont fun, mais pas moins utiles."
+    },
+    {
+      "title": "🧑‍🎓 Jeunesse",
+      "description": "Nous sommes jeunes, et c’est une force. On connaît les galères des soirées entre potes. C’est pour ça qu’on a créé un produit pensé par nous, pour vous."
+    },
+    {
+      "title": "🛡️ Prudence",
+      "description": "On ne gâche pas une soirée pour un bobo ou un oubli. On préfère prévenir que courir aux urgences. Et grâce à Sam, chacun peut être le héros de la soirée."
+    },
+    {
+      "title": "📘 Éducation",
+      "description": "Briser les tabous, vulgariser les gestes qui sauvent, oser parler de protection, c’est notre mission. Le savoir doit être partout, même entre deux verres de soda."
+    }
+  ]
+}

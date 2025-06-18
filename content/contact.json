@@ -1,0 +1,26 @@
+{
+  "support_title": "N'hésitez pas à nous soutenir !",
+  "support_text": "Et soyez à votre tour SAM, Sans Accidents Mortels ! Cliquez sur les QR codes ci-dessous",
+  "links": [
+    {
+      "href": "https://www.instagram.com/sam.protege/",
+      "alt": "QR code Instagram Sam Protège",
+      "img": "logo+ico/sam.protege_qr.png",
+      "aria_label": "Instagram Sam Protège"
+    },
+    {
+      "href": "https://www.instagram.com/sapeurs_lipopette/",
+      "alt": "QR code Instagram Sapeurs Lipopette",
+      "img": "logo+ico/sapeurs_lipopette_qr.png",
+      "aria_label": "Instagram Sapeurs Lipopette"
+    }
+  ],
+  "website_link": {
+    "href": "https://www.sapeurs-lipopette.com/#",
+    "text": "Ou sur leur site."
+  },
+  "contact_info": [
+    "Un problème ?",
+    "Contactez-nous via l'adresse mail : sam.protege37000@gmail.com"
+  ]
+}

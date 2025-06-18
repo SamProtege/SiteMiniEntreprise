@@ -1,0 +1,31 @@
+{
+  "title": "Notre équipe",
+  "intro": "Nous sommes 5 lycéens en classe de seconde, réunis autour d'une mission commune : rendre les soirées plus sûres, plus responsables, et surtout plus simples à gérer en cas de pépin.",
+  "members": [
+    {
+      "name": "Johan",
+      "role": "Responsable design & communication",
+      "description": "Ancien Jeune Sapeur-Pompier, il apporte son expertise des premiers secours et un max de bonne humeur au projet !"
+    },
+    {
+      "name": "Max",
+      "role": "Responsable financiers",
+      "description": "Lui aussi Jeunes Sapeurs-Pompiers, il sait ce qu’il faut faire quand la soirée dérape."
+    },
+    {
+      "name": "Alex",
+      "role": "Responsable production",
+      "description": "Autre pilier du kit, Alex met sa rigueur et son expérience pompier au service de l’efficacité."
+    },
+    {
+      "name": "Maxime",
+      "role": "Directeur général",
+      "description": "Fils de pompier, Maxime connaît les bons réflexes et ne manque jamais une idée pour améliorer le kit."
+    },
+    {
+      "name": "Alexandre",
+      "role": "Responsable communication digitale",
+      "description": "Lui aussi baigné dans l’univers des secours, Alexandre est un soutien solide pour chaque étape du projet."
+    }
+  ]
+}

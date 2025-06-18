@@ -5,51 +5,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="y7w_lfIJSRaXqeQuv3TNTJMBY-zRPpMbpj6zjDocsQc" />
-    <!-- Titre clair et descriptif -->
     <title>Sam'Protège - Mini-entreprise lycéenne pour la sécurité en soirée</title>
-
-    <!-- Description pour les moteurs de recherche -->
-    <meta name="description"
-        content="Sam'Protège est une mini-entreprise lycéenne proposant le Marmou’kit, un kit de sécurité pour les soirées, avec prévention, éducation et bienveillance." />
-
-    <!-- Mots-clés (optionnel, peu pris en compte mais peut aider) -->
-    <meta name="keywords" content="sécurité soirée, kit secours, mini entreprise, prévention, lycéens, Sam Protège" />
-
-    <!-- Auteur -->
+    <meta name="description" content="Sam'Protège est une mini-entreprise lycéenne..." />
+    <meta name="keywords" content="sécurité soirée, kit secours..." />
     <meta name="author" content="Sam'Protège - équipe lycéenne" />
-
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="logo+ico/favicon.ico" />
-
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/style.css" />
-
-    <!-- Balise canonical (indique l'URL principale) -->
     <link rel="canonical" href="https://samprotege.github.io/SiteMiniEntreprise/" />
-
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS9WWE8FRW"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-VS9WWE8FRW');
     </script>
 </head>
 
-
 <body>
-
     <header>
         <img src="logo+ico/logo.png" alt="Logo Sam Protège" class="logo" />
-
         <button id="menu-toggle" class="burger" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
-
         <nav id="mobile-menu" aria-label="Menu principal">
             <button id="close-btn" aria-label="Fermer le menu">✕</button>
             <a href="#about">Présentation</a>
@@ -63,153 +40,46 @@
     <main>
         <section id="about" class="about-section">
             <div class="container">
-                <h1>🧑‍🚒 Qui sommes-nous ?</h1>
-                <p>
-                    Nous sommes cinq jeunes réunis par une idée simple : <strong>protéger les autres, même en
-                        soirée</strong>.
-                    Inspirés par l’esprit des secours, des pompiers, et animés par une envie de faire bouger les choses,
-                    nous avons créé <strong>Sam’Protège</strong>.
-                </p>
-                <p>
-                    Notre objectif ? Rendre la sécurité accessible, fun, et <strong>dédramatiser les galères</strong>
-                    qui gâchent souvent les bons moments.
-                </p>
-                <ul>
-                    <li>🎒 <strong>Le Marmou’kit</strong>, notre kit de secours de soirée, c’est bien plus qu’un simple
-                        sac avec des pansements :</li>
-                    <li>➡️ Un manuel de premiers secours rédigé à la main et validé par des professionnels</li>
-                    <li>➡️ Des outils concrets : éthylotests, compresses, sacs vomitoires, gants stériles, préservatifs…
-                    </li>
-                    <li>➡️ Une démarche engagée : prévention, éducation et bienveillance</li>
-                </ul>
-                <p>
-                    Derrière ce projet, il y a <strong>du cœur, des galères, de l’énergie</strong>, des nuits blanches
-                    et surtout une <strong>envie commune d’agir</strong>.
-                </p>
-                <p>
-                    Parce que quand Timothée tombe dans les escaliers, ou quand un couple oublie les essentiels…<br />
-                    <strong>Il faut quelqu’un. Il faut Sam.</strong>
-                </p>
+                <h1 id="about-title"></h1>
+                <div id="about-body"></div>
             </div>
         </section>
 
         <section id="kit" class="kit-section">
             <div class="container">
-                <h2>🎒 Le contenu du Marmou’kit</h2>
-                <p>
-                    Le Marmou’kit, c’est un concentré de prévention, de sécurité et de bienveillance dans une pochette
-                    pratique, colorée, et pensée pour toutes les soirées. Voici ce que vous y trouverez :
-                </p>
-                <ul class="kit-list">
-                    <li class="fade-in">🟡 Couverture de survie</li>
-                    <li class="fade-in">🟡 Gants stériles</li>
-                    <li class="fade-in">🟡 Compresses stériles</li>
-                    <li class="fade-in">🟡 Pansements</li>
-                    <li class="fade-in">🟡 Pince à échardes</li>
-                    <li class="fade-in">🟡 Sac vomitoire</li>
-                    <li class="fade-in">🟡 Préservatifs</li>
-                    <li class="fade-in">🟡 Éthylotest</li>
-                    <li class="fade-in">🟡 Lingettes désinfectantes</li>
-                    <li class="fade-in">🔵 <strong>Manuel de premiers secours</strong> – rédigé à la main et validé par
-                        des professionnels</li>
-                </ul>
-                <p class="kit-note fade-in">
-                    Chaque élément a été soigneusement choisi pour répondre aux petits comme aux gros imprévus, dans
-                    l’esprit Sam’Protège : <strong>jeune, utile, et engagé</strong>.
-                </p>
+                <h2 id="kit-title"></h2>
+                <p id="kit-intro"></p>
+                <ul class="kit-list" id="kit-list"></ul>
+                <p class="kit-note fade-in" id="kit-note"></p>
             </div>
         </section>
 
         <section id="valeurs" class="valeurs-section">
             <div class="container">
-                <h2>💙 Nos valeurs</h2>
-                <p>
-                    Sam’Protège, c’est bien plus qu’un kit. C’est une mission portée par des jeunes engagés pour changer
-                    les habitudes en soirée, avec bienveillance et humour, mais aussi avec sérieux.
-                </p>
-
-                <div class="valeurs-grid">
-                    <article class="valeur fade-in" aria-label="Valeur Gaieté">
-                        <h3>🎉 Gaieté</h3>
-                        <p>Parce qu’un esprit joyeux et positif permet d’aborder même les sujets sérieux avec le
-                            sourire. Nos produits sont fun, mais pas moins utiles.</p>
-                    </article>
-                    <article class="valeur fade-in" aria-label="Valeur Jeunesse">
-                        <h3>🧑‍🎓 Jeunesse</h3>
-                        <p>Nous sommes jeunes, et c’est une force. On connaît les galères des soirées entre potes. C’est
-                            pour ça qu’on a créé un produit pensé par nous, pour vous.</p>
-                    </article>
-                    <article class="valeur fade-in" aria-label="Valeur Prudence">
-                        <h3>🛡️ Prudence</h3>
-                        <p>On ne gâche pas une soirée pour un bobo ou un oubli. On préfère prévenir que courir aux
-                            urgences. Et grâce à Sam, chacun peut être le héros de la soirée.</p>
-                    </article>
-                    <article class="valeur fade-in" aria-label="Valeur Éducation">
-                        <h3>📘 Éducation</h3>
-                        <p>Briser les tabous, vulgariser les gestes qui sauvent, oser parler de protection, c’est notre
-                            mission. Le savoir doit être partout, même entre deux verres de soda.</p>
-                    </article>
-                </div>
+                <h2 id="valeurs-title"></h2>
+                <p id="valeurs-intro"></p>
+                <div class="valeurs-grid" id="valeurs-list"></div>
             </div>
         </section>
 
         <section id="equipe" class="equipe-section">
             <div class="container">
-                <h2>Notre équipe</h2>
-                <p>
-                    Nous sommes 5 lycéens en classe de seconde, réunis autour d'une mission commune : rendre les soirées
-                    plus sûres, plus responsables, et surtout plus simples à gérer en cas de pépin.
-                </p>
-
-                <div class="equipe-grid">
-                    <article class="membre fade-in" aria-label="Membre Johan">
-                        <h3>Johan - Responsable design & communication</h3>
-                        <p>Ancien Jeune Sapeur-Pompier, il apporte son expertise des premiers secours et un max de bonne
-                            humeur au projet !</p>
-                    </article>
-                    <article class="membre fade-in" aria-label="Membre Max">
-                        <h3>Max - Responsable financiers</h3>
-                        <p>Lui aussi Jeunes Sapeurs-Pompiers, il sait ce qu’il faut faire quand la soirée dérape.</p>
-                    </article>
-                    <article class="membre fade-in" aria-label="Membre Alex">
-                        <h3>Alex - Responsable production</h3>
-                        <p>Autre pilier du kit, Alex met sa rigueur et son expérience pompier au service de
-                            l’efficacité.</p>
-                    </article>
-                    <article class="membre fade-in" aria-label="Membre Maxime">
-                        <h3>Maxime - Directeur général</h3>
-                        <p>Fils de pompier, Maxime connaît les bons réflexes et ne manque jamais une idée pour améliorer
-                            le kit.</p>
-                    </article>
-                    <article class="membre fade-in" aria-label="Membre Alexandre">
-                        <h3>Alexandre - Responsable communication digitale</h3>
-                        <p>Lui aussi baigné dans l’univers des secours, Alexandre est un soutien solide pour chaque
-                            étape du projet.</p>
-                    </article>
-                </div>
+                <h2 id="equipe-title"></h2>
+                <p id="equipe-intro"></p>
+                <div class="equipe-grid" id="equipe-list"></div>
             </div>
         </section>
+
+        <section id="contact" class="reseau fade-in">
+            <h2 id="contact-title"></h2>
+            <p id="contact-description"></p>
+            <div id="contact-qrcodes"></div>
+            <p><a href="https://www.sapeurs-lipopette.com/#" target="_blank" class="sitelink">Ou sur leur site.</a></p>
+            <p id="contact-problem"></p>
+            <p id="contact-mail"></p>
         </section>
 
-        <section id="contact" class="reseau fade-in" aria-label="Section de soutien et contacts">
-            <h2>N'hésitez pas à nous soutenir !</h2>
-            <p>Et soyez à votre tour SAM, <strong class="hoverlettre">S</strong>ans <strong
-                    class="hoverlettre">A</strong>ccidents <strong class="hoverlettre">M</strong>ortels ! Cliquez sur
-                les QR codes ci-dessous</p>
-            <a href="https://www.instagram.com/sam.protege/" target="_blank" rel="noopener noreferrer"
-                aria-label="Instagram Sam Protège">
-                <img src="logo+ico/sam.protege_qr.png" alt="QR code Instagram Sam Protège" class="insta-link fade-in" />
-            </a>
-            <a href="https://www.instagram.com/sapeurs_lipopette/" target="_blank" rel="noopener noreferrer"
-                aria-label="Instagram Sapeurs Lipopette">
-                <img src="logo+ico/sapeurs_lipopette_qr.png" alt="QR code Instagram Sapeurs Lipopette"
-                    class="insta-link fade-in" />
-            </a>
-            <p><a href="https://www.sapeurs-lipopette.com/#" target="_blank" class="sitelink">Ou sur leur site.</a></p>
-            <p>Un problème ?</p>
-            <p>Contactez-nous via l'adresse mail : sam.protege37000@gmail.com</p>
-        </section>
-        <section id="video-presentation" class="video-pres" aria-label="Section sur la video intégrées">
+        <section id="video-presentation" class="video-pres">
             <video controls width="300">
                 <source src="logo+ico/0326.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la lecture de vidéos.
@@ -227,20 +97,21 @@
                 alt="Logo Super-U St-Jean de Mont" class="logo--sponso"></a>
         <p>&copy; 2025 Sam Protège - Tous droits réservés - <a href="mentions-legale.html">mentions légales</a></p>
     </footer>
-    <!-- Cookie Consent Banner -->
+
     <div id="cookie-banner" class="cookie-banner">
-        <p>Ce site utilise des cookies à des fins de mesure d’audience (Google
-            Analytics).
+        <p>Ce site utilise des cookies à des fins de mesure d’audience (Google Analytics).
             <a href="/confidentialite.html" target="_blank">En savoir plus</a>.
         </p>
         <button id="accept-cookies"> Accepter ✅</button>
         <button id="decline-cookies">Refuser ❌</button>
     </div>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="assets/send.js"></script>
     <script src="assets/anim.js"></script>
     <script src="assets/script.js" defer></script>
+    <script src="assets/dynamic-content.js"></script>
 
 </body>
 
