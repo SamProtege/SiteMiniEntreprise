@@ -527,20 +527,29 @@
             }
         }
 
+/* Forcer police + couleur dans la section contact, sur tous les éléments dynamiques */
+#contact-title,
+#contact-description,
+#contact-qrcodes,
+#contact-qrcodes a,
+#contact-qrcodes img,
+#contact-problem,
+#contact-mail,
+#contact a.sitelink {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    color: #333 !important;
+}
 
-        /* Forcer police + couleur sur tout le contenu dynamique */
-        #about-body,
-        #kit-intro,
-        #kit-list,
-        #kit-note,
-        #valeurs-intro,
-        #valeurs-list,
-        #equipe-intro,
-        #equipe-list,
-        #contact-description,
-        #contact-qrcodes,
-        #contact-problem,
-        #contact-mail {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-            color: #333 !important;
-        }
+/* Limiter la taille des QR codes (images dans contact-qrcodes) */
+#contact-qrcodes a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#contact-qrcodes img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
