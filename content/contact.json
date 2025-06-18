@@ -11,7 +11,7 @@
     {
       "href": "https://www.instagram.com/sapeurs_lipopette/",
       "alt": "QR code Instagram Sapeurs Lipopette",
-      "img": "logo+ico/sapeurs_lipopette_qr.png",
+      "img": "../logo+ico/sapeurs_lipopette_qr.png",
       "aria_label": "Instagram Sapeurs Lipopette"
     }
   ],

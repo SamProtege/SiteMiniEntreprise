@@ -527,15 +527,6 @@
             }
         }
 
-        /* Fix taille QR codes */
-        .contact-qrcodes img,
-        .qr-code {
-            max-width: 150px !important;
-            /* taille max, tu peux ajuster */
-            height: auto !important;
-            display: block;
-            margin: 0 auto;
-        }
 
         /* Forcer police + couleur sur tout le contenu dynamique */
         #about-body,
