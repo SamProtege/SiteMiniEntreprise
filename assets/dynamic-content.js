@@ -6,13 +6,18 @@ function createElement(tag, className, textContent) {
     return el;
 }
 
-// Charge une section depuis son fichier JSON et insère son contenu
+// Charge une section depuis son fichier JSON et insère son contenu dans un conteneur donné
 async function loadSection(jsonPath, containerId) {
     try {
         const response = await fetch(jsonPath);
+        if (!response.ok) throw new Error(`Erreur chargement ${jsonPath}`);
+        
         const data = await response.json();
         const container = document.getElementById(containerId);
         if (!container) return;
+
+        // Nettoyer le contenu avant d'ajouter
+        container.innerHTML = "";
 
         if (data.title) {
             const h = createElement("h1", "", data.title);
@@ -61,6 +66,16 @@ async function loadSection(jsonPath, containerId) {
                 art.setAttribute("aria-label", `Membre ${m.nom}`);
                 const h3 = createElement("h3", "", m.nom);
                 const p = createElement("p", "", m.texte);
+
+                // Image si présente
+                if (m.img) {
+                    const img = document.createElement("img");
+                    img.src = m.img;
+                    img.alt = m.nom;
+                    img.className = "equipe-img";
+                    art.appendChild(img);
+                }
+
                 art.appendChild(h3);
                 art.appendChild(p);
                 grid.appendChild(art);
@@ -68,15 +83,38 @@ async function loadSection(jsonPath, containerId) {
             container.appendChild(grid);
         }
 
+        if (data.qrcodes && Array.isArray(data.qrcodes)) {
+            const qrcodesDiv = createElement("div", "qrcodes");
+            data.qrcodes.forEach(qr => {
+                const img = document.createElement("img");
+                img.src = qr.src;
+                img.alt = qr.alt || "QR Code";
+                img.className = "qrcode-img";
+                qrcodesDiv.appendChild(img);
+            });
+            container.appendChild(qrcodesDiv);
+        }
+
+        if (data.note) {
+            const note = createElement("p", "note", data.note);
+            container.appendChild(note);
+        }
+
+        if (data.mail) {
+            const mail = createElement("p", "mail", `Contact : ${data.mail}`);
+            container.appendChild(mail);
+        }
+
     } catch (err) {
         console.error(`Erreur lors du chargement de ${jsonPath} :`, err);
     }
 }
 
-// Charger toutes les sections à partir de leurs fichiers JSON
+// Charger toutes les sections à partir de leurs fichiers JSON au chargement de la page
 document.addEventListener("DOMContentLoaded", () => {
     loadSection("content/accueil.json", "accueil-content");
     loadSection("content/kit.json", "kit-content");
     loadSection("content/valeurs.json", "valeurs-content");
     loadSection("content/equipe.json", "equipe-content");
+    loadSection("content/contact.json", "contact-content");
 });
