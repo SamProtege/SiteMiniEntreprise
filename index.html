@@ -115,7 +115,8 @@
     <script>
         async function loadSection(sectionName) {
             try {
-                const res = await fetch(`/content/${sectionName}.json`);
+                // fetch relatif sans slash initial pour éviter double /content/content/
+                const res = await fetch(`content/${sectionName}.json`);
                 if (!res.ok) throw new Error(`Erreur chargement ${sectionName}.json`);
                 const data = await res.json();
 
@@ -147,7 +148,7 @@
 
                         const valeursList = document.getElementById('valeurs-list');
                         valeursList.innerHTML = '';
-                        if (Array.isArray(data.values)) {  // attention : "values" en anglais dans JSON
+                        if (Array.isArray(data.values)) {  // clef "values" en anglais dans JSON
                             data.values.forEach(v => {
                                 const div = document.createElement('div');
                                 div.className = 'valeur-item';
@@ -163,7 +164,7 @@
 
                         const equipeList = document.getElementById('equipe-list');
                         equipeList.innerHTML = '';
-                        if (Array.isArray(data.members)) {  // "members" en anglais dans JSON
+                        if (Array.isArray(data.members)) {  // clef "members" en anglais dans JSON
                             data.members.forEach(m => {
                                 const div = document.createElement('div');
                                 div.className = 'membre-item';
@@ -205,6 +206,7 @@
         // Charge toutes les sections au chargement
         ['accueil', 'kit', 'valeurs', 'equipe', 'contact'].forEach(loadSection);
     </script>
+
 
 </body>
 
