@@ -1,7 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
-
+  branch: master  # ou master selon ton repo
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
@@ -11,8 +10,80 @@ collections:
     label: "Accueil"
     files:
       - label: "Page d'accueil"
-        name: "index"
+        name: "accueil"
         file: "content/accueil.json"
         fields:
-          - { label: "Titre principal", name: "title", widget: "string" }
-          - { label: "Contenu", name: "body", widget: "markdown" }
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Paragraphes", name: "paragraphs", widget: "list", required: false }
+          - { label: "Liste", name: "list", widget: "list", required: false }
+          - { label: "Paragraphes de clôture", name: "closing_paragraphs", widget: "list", required: false }
+
+  - name: "kit"
+    label: "Kit"
+    files:
+      - label: "Page Kit"
+        name: "kit"
+        file: "content/kit.json"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - { label: "Éléments du kit", name: "items", widget: "list" }
+          - { label: "Note", name: "note", widget: "text" }
+
+  - name: "valeurs"
+    label: "Valeurs"
+    files:
+      - label: "Page Valeurs"
+        name: "valeurs"
+        file: "content/valeurs.json"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - label: "Valeurs"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "equipe"
+    label: "Équipe"
+    files:
+      - label: "Page Équipe"
+        name: "equipe"
+        file: "content/equipe.json"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - label: "Membres"
+            name: "members"
+            widget: "list"
+            fields:
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Rôle", name: "role", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "contact"
+    label: "Contact"
+    files:
+      - label: "Page Contact"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - { label: "Titre soutien", name: "support_title", widget: "string" }
+          - { label: "Texte soutien", name: "support_text", widget: "text" }
+          - label: "QR codes"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "URL", name: "href", widget: "string" }
+              - { label: "Texte alternatif", name: "alt", widget: "string" }
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Aria-label", name: "aria_label", widget: "string" }
+          - label: "Lien site"
+            name: "website_link"
+            widget: "object"
+            fields:
+              - { label: "URL", name: "href", widget: "string" }
+              - { label: "Texte", name: "text", widget: "string" }
+          - { label: "Informations de contact", name: "contact_info", widget: "list" }
