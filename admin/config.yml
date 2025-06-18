@@ -2,7 +2,9 @@ backend:
   name: github
   repo: SamProtege/SiteMiniEntreprise
   branch: master
-  
+  auth_type: pkce
+  app_id: "Ov23lib1f0o7ErdCqGzX"
+
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
 
@@ -11,8 +13,8 @@ collections:
     label: "Accueil"
     files:
       - label: "Page d'accueil"
-        name: "index"
-        file: "index.html"
+        name: "accueil"
+        file: "content/accueil.json"
         fields:
-          - { label: "Titre principal", name: "title", widget: "string" }
-          - { label: "Contenu", name: "body", widget: "markdown" }
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Contenu", name: "body", widget: "text" }
