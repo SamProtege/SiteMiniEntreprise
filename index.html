@@ -121,7 +121,7 @@
                 const data = await res.json();
 
                 switch (sectionName) {
-                    case 'accueil':  // accueil au lieu d'about
+                    case 'about':  // accueil au lieu d'about
                         document.getElementById('about-title').textContent = data.title || '';
                         document.getElementById('about-body').innerHTML = data.body || '';
                         break;
@@ -204,7 +204,7 @@
         }
 
         // Charge toutes les sections au chargement
-        ['accueil', 'kit', 'valeurs', 'equipe', 'contact'].forEach(loadSection);
+        ['about', 'kit', 'valeurs', 'equipe', 'contact'].forEach(loadSection);
     </script>
 
 

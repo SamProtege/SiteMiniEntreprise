@@ -75,7 +75,7 @@ async function loadSection(jsonPath, containerId) {
 
 // Charger toutes les sections à partir de leurs fichiers JSON
 document.addEventListener("DOMContentLoaded", () => {
-    loadSection("content/accueil.json", "accueil-content");
+    loadSection("content/about.json", "accueil-content");
     loadSection("content/kit.json", "kit-content");
     loadSection("content/valeurs.json", "valeurs-content");
     loadSection("content/equipe.json", "equipe-content");
