@@ -52,22 +52,4 @@ document.addEventListener("DOMContentLoaded", function () {
     gtag('config', 'G-VS9WWE8FRW');
   }
 });
-// Theme toggle minimal — safe à ajouter à assets/script.js
-(function(){
-  const root = document.documentElement;
-  const storageKey = 'samprot_theme';
-  const btn = document.getElementById('theme-toggle');
 
-  // init from storage / OS
-  const saved = localStorage.getItem(storageKey);
-  if (saved === 'dark') root.classList.add('dark');
-  else if (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) root.classList.add('dark');
-
-  if (!btn) return;
-  btn.addEventListener('click', () => {
-    const isDark = root.classList.toggle('dark');
-    localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
-    // optional: add small pulse feedback
-    btn.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.08)' }, { transform: 'scale(1)' }], { duration: 260, easing: 'cubic-bezier(.2,.9,.3,1)' });
-  });
-})();
